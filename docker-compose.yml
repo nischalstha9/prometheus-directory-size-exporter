@@ -7,4 +7,5 @@ services:
       - 8000:8000
     volumes:
       - ./config:/code/config
-      - /home/nischal/dev/inventory_management:/inventory_mgmt_fronten
+      - ./protected:/protected
+      # - /home/nischal/dev/inventory_management:/inventory_mgmt_fronten
