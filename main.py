@@ -6,11 +6,7 @@ import os
 import yaml
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 
-
-paths=[]
-with open("config/paths.yaml", 'r') as stream:
-    data = yaml.safe_load(stream)
-    paths=data['paths']
+config_file_path = "config/paths.yaml"
 
 
 def get_dir_size(start_path):
@@ -24,12 +20,27 @@ def get_dir_size(start_path):
     return total_size#in bytes
 
 
-class CustomCollector(object):    
+class CustomCollector(object): 
+    PATHS=[]
+
+    def __init__(self):
+        self.set_paths_from_config()
+    
+    def set_paths_from_config(self):
+        with open(config_file_path, 'r') as stream:
+            data = yaml.safe_load(stream)
+            try:
+                self.PATHS=data['paths']
+            except Exception as e:
+                print(e)
+                pass
+
     def collect(self):
-        g = GaugeMetricFamily("file_size", 'File Size',labels=["path"])
-        for path in paths:
-            path_folder_name = path
-            g.add_metric([path_folder_name],get_dir_size(start_path=path))
+        g = GaugeMetricFamily("file_size", f'File sizes of given paths in ./{config_file_path}',labels=["path"])
+        if len(self.PATHS)>0:
+            for path in self.PATHS:
+                path_folder_name = path
+                g.add_metric([path_folder_name],get_dir_size(start_path=path))
         yield g
 
 REGISTRY.register(CustomCollector())
@@ -38,7 +49,6 @@ REGISTRY.register(CustomCollector())
 
 # Create a metric to track time spent and requests made.
 REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
-TIME_GAP = 10 #seconds
 
 # Decorate function with metric.
 @REQUEST_TIME.time()
@@ -48,12 +58,15 @@ def process_request(t):
 
 
 if __name__ == '__main__':
-    # Start up the server to expose the metrics.
-    port = 8000
-    start_http_server(port)
-    print(f"Prometheus File Size Stat exporter started on http://localhost:{port}")
-    # Generate some requests.
-    while True:
-        # get_size()
-        # time.sleep(TIME_GAP)
-        process_request(random.random())
+    if not os.path.exists(config_file_path):
+        while True:
+            print(f"Config file not provided at: ./{config_file_path}")
+            time.sleep(10)
+    else:
+        # Start up the server to expose the metrics.
+        port = 8000
+        start_http_server(port)
+        print(f"Prometheus File Size Stat exporter started on http://localhost:{port}")
+        # Generate some requests.
+        while True:
+            process_request(random.random())
