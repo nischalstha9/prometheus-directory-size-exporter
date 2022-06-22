@@ -1,12 +1,25 @@
 #!/bin/python3
 from prometheus_client import start_http_server, Summary
-import random
 import time
 import os
 import yaml
+import http.server
 from prometheus_client.core import GaugeMetricFamily, REGISTRY
 
 config_file_path = "config/paths.yaml"
+port = 30000
+server_port = 8000
+
+class ServerHandler(http.server.BaseHTTPRequestHandler):
+  def do_GET(self):
+    import urllib
+    self.send_response(200)
+    self.end_headers()
+    if self.path=="/metrics":
+        x = urllib.request.urlopen(f'http://0.0.0.0:{port}')
+        self.wfile.write(x.read())
+    else:
+        self.wfile.write(b"Hello World! File Stat Metrics avalilable at: /metrics")
 
 
 def get_dir_size(start_path):
@@ -16,7 +29,7 @@ def get_dir_size(start_path):
             fp = os.path.join(dirpath, f)
             # skip if it is symbolic link
             if not os.path.islink(fp):
-                total_size += os.path.getsize(fp)
+                total_size += os.stat(fp).st_blocks*512
     return total_size#in bytes
 
 
@@ -43,9 +56,6 @@ class CustomCollector(object):
                 g.add_metric([path_folder_name],get_dir_size(start_path=path))
         yield g
 
-REGISTRY.register(CustomCollector())
-
-
 
 # Create a metric to track time spent and requests made.
 REQUEST_TIME = Summary('request_processing_seconds', 'Time spent processing request')
@@ -64,9 +74,10 @@ if __name__ == '__main__':
             time.sleep(10)
     else:
         # Start up the server to expose the metrics.
-        port = 8000
+        REGISTRY.register(CustomCollector())
         start_http_server(port)
+        server = http.server.HTTPServer(("0.0.0.0", server_port), ServerHandler)
         print(f"Prometheus File Size Stat exporter started on http://localhost:{port}")
-        # Generate some requests.
-        while True:
-            process_request(random.random())
+        print(f"HTTP server available on port {server_port}")
+        print(f"Prometheus metrics available on /metrics")
+        server.serve_forever()
