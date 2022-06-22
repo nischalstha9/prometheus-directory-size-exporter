@@ -6,6 +6,7 @@ services:
     ports: 
       - 8000:8000
     volumes:
-      - ./config:/code/config
+      - ./config:/code/config  #this one is compulsary and path on container is strict
       - ./protected:/protected
       # - /home/nischal/dev/inventory_management:/inventory_mgmt_fronten
+    #networks.....add as ur need
