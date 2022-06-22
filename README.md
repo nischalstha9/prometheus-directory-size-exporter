@@ -1,6 +1,7 @@
 # prometheus-directory-size-exporter
 
 ## path.yaml sample
+
 ```
 paths:
   - "/home/nischal/dev/prometheus-filestat"
@@ -9,13 +10,14 @@ paths:
 ```
 
 ## Run with docker-compose
+
 ```
 version: "3"
 services:
   file_size_exporter:
     build:
       context: .
-    ports: 
+    ports:
       - 8000:8000
     volumes:
       - ./config:/code/config    #THIS IS CONFIG DIR With path.yaml File...naming convention is strict(THERE MUST BE path.yaml file with paths[])
@@ -24,3 +26,4 @@ services:
 ```
 
 > NOTE: use `sudo docker-compose up -d` if root protected directories size are not accurate
+> Metrics is available at `:8000/metrics` path inside container
