@@ -25,5 +25,7 @@ services:
       - /home/nischal/dev/inventory_management:/inventory_mgmt_fronten
 ```
 
-- NOTE: use `sudo docker-compose up -d` if root protected directories size are not accurate
-- Metrics is available at `:8000/metrics` path inside container
+> - NOTE: Make sure all paths in config and docker-compose volume do exist and sync together
+> - NOTE: use `sudo docker-compose up -d` if root protected directories size are not accurate
+> - Metrics is available at `:8000/metrics` path inside container
+> - TIP: Use `find `pwd` -maxdepth 1 -type d` to get paths for all directories in current directory
