@@ -16,7 +16,7 @@ class ServerHandler(http.server.BaseHTTPRequestHandler):
     self.send_response(200)
     self.end_headers()
     if self.path=="/metrics":
-        x = urllib.request.urlopen(f'http://0.0.0.0:{port}')
+        x = urllib.request.urlopen(f'http://localhost:{port}')
         self.wfile.write(x.read())
     else:
         self.wfile.write(b"Hello World! File Stat Metrics avalilable at: /metrics")

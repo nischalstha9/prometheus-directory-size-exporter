@@ -1,0 +1,10 @@
+version: "3"
+services:
+  file_size_exporter:
+    build:
+      context: .
+    ports: 
+      - 8000:8000
+    volumes:
+      - ./config:/code/config
+      - /home/nischal/dev/inventory_management:/inventory_mgmt_fronten
