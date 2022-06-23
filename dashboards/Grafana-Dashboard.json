@@ -1,0 +1,744 @@
+{
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": "-- Grafana --",
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "file descriptors, used, available metrics",
+  "editable": true,
+  "gnetId": 3089,
+  "graphTooltip": 0,
+  "id": 17,
+  "iteration": 1655966076040,
+  "links": [],
+  "panels": [
+    {
+      "aliasColors": {},
+      "bars": false,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Naxa Prometheus",
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "fill": 1,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 13,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "hiddenSeries": false,
+      "id": 5,
+      "legend": {
+        "alignAsTable": true,
+        "avg": false,
+        "current": true,
+        "max": true,
+        "min": false,
+        "rightSide": true,
+        "show": true,
+        "sideWidth": 250,
+        "total": false,
+        "values": true
+      },
+      "lines": true,
+      "linewidth": 1,
+      "links": [],
+      "nullPointMode": "null",
+      "options": {
+        "alertThreshold": true
+      },
+      "percentage": false,
+      "pluginVersion": "7.5.5",
+      "pointradius": 5,
+      "points": false,
+      "renderer": "flot",
+      "seriesOverrides": [],
+      "spaceLength": 10,
+      "stack": false,
+      "steppedLine": false,
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "file_size",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{path}}",
+          "refId": "B",
+          "step": 4,
+          "target": ""
+        }
+      ],
+      "thresholds": [],
+      "timeFrom": null,
+      "timeRegions": [],
+      "timeShift": null,
+      "title": "File Size Graph",
+      "tooltip": {
+        "shared": true,
+        "sort": 2,
+        "value_type": "individual"
+      },
+      "type": "graph",
+      "xaxis": {
+        "buckets": null,
+        "mode": "time",
+        "name": null,
+        "show": true,
+        "values": []
+      },
+      "yaxes": [
+        {
+          "format": "decbytes",
+          "label": "",
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        },
+        {
+          "format": "short",
+          "label": null,
+          "logBase": 1,
+          "max": null,
+          "min": null,
+          "show": true
+        }
+      ],
+      "yaxis": {
+        "align": false,
+        "alignLevel": null
+      }
+    },
+    {
+      "datasource": "Naxa Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "thresholds"
+          },
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 10,
+        "x": 0,
+        "y": 13
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "frameIndex": 46,
+        "showHeader": true
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "file_size",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{path}}",
+          "refId": "B",
+          "step": 4,
+          "target": ""
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "File Size",
+      "type": "table"
+    },
+    {
+      "datasource": "Naxa Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 16,
+        "w": 14,
+        "x": 10,
+        "y": 13
+      },
+      "id": 7,
+      "links": [],
+      "options": {
+        "displayLabels": [],
+        "legend": {
+          "displayMode": "list",
+          "placement": "right",
+          "values": []
+        },
+        "pieType": "pie",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "text": {}
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "file_size",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{path}}",
+          "refId": "B",
+          "step": 4,
+          "target": ""
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "File Size Pie Chart",
+      "type": "piechart"
+    },
+    {
+      "datasource": "Naxa Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "min": 9,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 29
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [
+            "mean",
+            "lastNotNull",
+            "max",
+            "min",
+            "sum"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "file_size",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{path}}",
+          "refId": "B",
+          "step": 4,
+          "target": ""
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "File Size Time Series",
+      "type": "timeseries"
+    }
+  ],
+  "refresh": "5m",
+  "schemaVersion": 27,
+  "style": "dark",
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": "Naxa Prometheus",
+        "definition": "",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "node",
+        "options": [],
+        "query": {
+          "query": "label_values(node_cpu_seconds_total{job=\"node\"}, instance)",
+          "refId": "Naxa Prometheus-node-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "/([^:]+):.*/",
+        "skipUrlSync": false,
+        "sort": 1,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "isNone": true,
+          "selected": false,
+          "text": "None",
+          "value": ""
+        },
+        "datasource": "Naxa Prometheus",
+        "definition": "",
+        "description": null,
+        "error": null,
+        "hide": 2,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "port",
+        "options": [],
+        "query": {
+          "query": "label_values(node_cpu_seconds_total{job=\"node\"}, instance)",
+          "refId": "Naxa Prometheus-port-Variable-Query"
+        },
+        "refresh": 1,
+        "regex": "/[^:]+:(.*)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": false
+      },
+      {
+        "allValue": null,
+        "current": {
+          "selected": false,
+          "text": "",
+          "value": ""
+        },
+        "datasource": null,
+        "definition": "file_size",
+        "description": null,
+        "error": null,
+        "hide": 0,
+        "includeAll": false,
+        "label": null,
+        "multi": false,
+        "name": "paths",
+        "options": [
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/FactsWeb\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/FactsWeb\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/IOM-Backend-Django\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/IOM-Backend-Django\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/KVS-Django\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/KVS-Django\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/Kiosk-EyeSet\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/Kiosk-EyeSet\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/Mahila-Pratinidhi\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/Mahila-Pratinidhi\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/app.naxa.com.np\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/app.naxa.com.np\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/backend-geodetic-web-application\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/backend-geodetic-web-application\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/backend-pac-kiosk\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/backend-pac-kiosk\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/bhumiapi\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/bhumiapi\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/blue-green-infra-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/blue-green-infra-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/changu-metric-addressing-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/changu-metric-addressing-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/changu-metric-addressing-frontend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/changu-metric-addressing-frontend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/cycle-app-greenway-frontend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/cycle-app-greenway-frontend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/demo_map\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/demo_map\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/dfid\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/dfid\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/drone-registration\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/drone-registration\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/everse-next-js\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/everse-next-js\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/everse-react\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/everse-react\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/eversepro-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/eversepro-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/feb-frontend-and-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/feb-frontend-and-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/filesize_test\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/filesize_test\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/geoserver-naxa\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/geoserver-naxa\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/geoserver-test\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/geoserver-test\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/hydro-mapping\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/hydro-mapping\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/info.naxa.com.np\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/info.naxa.com.np\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/kmc\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/kmc\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/kobo-template\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/kobo-template\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/liris-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/liris-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/mongodb_naxa\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/mongodb_naxa\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/municipal_assessment_backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/municipal_assessment_backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxa-backend-boilerplate\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxa-backend-boilerplate\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxa.com.np\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxa.com.np\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxacon-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxacon-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend_kobo\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend_kobo\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend_kobo_stag\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/naxamapper_backend_kobo_stag\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/nidn-dashboard\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/nidn-dashboard\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/ortho-to-tiles\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/ortho-to-tiles\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pccims-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pccims-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pccims-frontend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pccims-frontend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-frontend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-frontend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-frontend-prod\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-frontend-prod\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-prod\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/pgis-toolkit-prod\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/prometheus-stack-naxa\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/prometheus-stack-naxa\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/sakchyam\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/sakchyam\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/tmp\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/tmp\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/utility-mapping-backend\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/utility-mapping-backend\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/utility-mapping-backend-prod\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/utility-mapping-backend-prod\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/varicon\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/varicon\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/vectortile_frontend_openlayer\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/vectortile_frontend_openlayer\"}"
+          },
+          {
+            "selected": false,
+            "text": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/zite-tests\"}",
+            "value": "file_size{instance=\"file_size_exporter:8000\",job=\"file_size_exporter_139\",path=\"/srv/Projects/zite-tests\"}"
+          }
+        ],
+        "query": {
+          "query": "file_size",
+          "refId": "StandardVariableQuery"
+        },
+        "refresh": 0,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "tagValuesQuery": "",
+        "tags": [],
+        "tagsQuery": "",
+        "type": "query",
+        "useTags": true
+      }
+    ]
+  },
+  "time": {
+    "from": "now-3h",
+    "to": "now"
+  },
+  "timepicker": {
+    "refresh_intervals": [
+      "5s",
+      "10s",
+      "30s",
+      "1m",
+      "5m"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
+  "timezone": "browser",
+  "title": "File System Dashboard",
+  "uid": "000000007",
+  "version": 10
+}
