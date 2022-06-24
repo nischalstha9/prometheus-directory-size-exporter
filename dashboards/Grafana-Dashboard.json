@@ -17,9 +17,102 @@
   "gnetId": 3089,
   "graphTooltip": 0,
   "id": 17,
-  "iteration": 1655966076040,
+  "iteration": 1656054751645,
   "links": [],
   "panels": [
+    {
+      "datasource": "Naxa Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "mode": "palette-classic"
+          },
+          "custom": {
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 10,
+            "gradientMode": "none",
+            "hideFrom": {
+              "graph": false,
+              "legend": false,
+              "tooltip": false
+            },
+            "lineInterpolation": "linear",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 5,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": true
+          },
+          "mappings": [],
+          "min": 9,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "decbytes"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 8,
+      "links": [],
+      "options": {
+        "graph": {},
+        "legend": {
+          "calcs": [
+            "logmin",
+            "max",
+            "lastNotNull"
+          ],
+          "displayMode": "table",
+          "placement": "right"
+        },
+        "tooltipOptions": {
+          "mode": "single"
+        }
+      },
+      "pluginVersion": "7.5.5",
+      "targets": [
+        {
+          "exemplar": true,
+          "expr": "file_size",
+          "format": "time_series",
+          "hide": false,
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "{{path}}",
+          "refId": "B",
+          "step": 4,
+          "target": ""
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "File Size Time Series",
+      "type": "timeseries"
+    },
     {
       "aliasColors": {},
       "bars": false,
@@ -33,10 +126,10 @@
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 13,
-        "w": 24,
+        "h": 26,
+        "w": 14,
         "x": 0,
-        "y": 0
+        "y": 15
       },
       "hiddenSeries": false,
       "id": 5,
@@ -128,11 +221,7 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "thresholds"
-          },
-          "custom": {
-            "align": null,
-            "filterable": false
+            "mode": "palette-classic"
           },
           "mappings": [],
           "thresholds": {
@@ -153,66 +242,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 10,
-        "w": 10,
-        "x": 0,
-        "y": 13
-      },
-      "id": 6,
-      "links": [],
-      "options": {
-        "frameIndex": 46,
-        "showHeader": true
-      },
-      "pluginVersion": "7.5.5",
-      "targets": [
-        {
-          "exemplar": true,
-          "expr": "file_size",
-          "format": "time_series",
-          "hide": false,
-          "interval": "",
-          "intervalFactor": 1,
-          "legendFormat": "{{path}}",
-          "refId": "B",
-          "step": 4,
-          "target": ""
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "File Size",
-      "type": "table"
-    },
-    {
-      "datasource": "Naxa Prometheus",
-      "fieldConfig": {
-        "defaults": {
-          "color": {
-            "mode": "palette-classic"
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
         "h": 16,
-        "w": 14,
-        "x": 10,
-        "y": 13
+        "w": 10,
+        "x": 14,
+        "y": 15
       },
       "id": 7,
       "links": [],
@@ -258,34 +291,13 @@
       "fieldConfig": {
         "defaults": {
           "color": {
-            "mode": "palette-classic"
+            "mode": "thresholds"
           },
           "custom": {
-            "axisLabel": "",
-            "axisPlacement": "auto",
-            "barAlignment": 0,
-            "drawStyle": "line",
-            "fillOpacity": 10,
-            "gradientMode": "none",
-            "hideFrom": {
-              "graph": false,
-              "legend": false,
-              "tooltip": false
-            },
-            "lineInterpolation": "linear",
-            "lineStyle": {
-              "fill": "solid"
-            },
-            "lineWidth": 1,
-            "pointSize": 5,
-            "scaleDistribution": {
-              "type": "linear"
-            },
-            "showPoints": "never",
-            "spanNulls": true
+            "align": null,
+            "filterable": false
           },
           "mappings": [],
-          "min": 9,
           "thresholds": {
             "mode": "absolute",
             "steps": [
@@ -304,29 +316,16 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 15,
-        "w": 24,
-        "x": 0,
-        "y": 29
+        "h": 10,
+        "w": 10,
+        "x": 14,
+        "y": 31
       },
-      "id": 8,
+      "id": 6,
       "links": [],
       "options": {
-        "graph": {},
-        "legend": {
-          "calcs": [
-            "mean",
-            "lastNotNull",
-            "max",
-            "min",
-            "sum"
-          ],
-          "displayMode": "table",
-          "placement": "right"
-        },
-        "tooltipOptions": {
-          "mode": "single"
-        }
+        "frameIndex": 46,
+        "showHeader": true
       },
       "pluginVersion": "7.5.5",
       "targets": [
@@ -345,8 +344,8 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "File Size Time Series",
-      "type": "timeseries"
+      "title": "File Size",
+      "type": "table"
     }
   ],
   "refresh": "5m",
@@ -740,5 +739,5 @@
   "timezone": "browser",
   "title": "File System Dashboard",
   "uid": "000000007",
-  "version": 10
+  "version": 12
 }
